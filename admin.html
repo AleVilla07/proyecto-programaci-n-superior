@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador de Clientes VIP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header-content container">
+    <div class="content">
+      <h1>Administrador de Clientes VIP</h1>
+      <p>Gestiona la base de datos local para clientes VIP del hotel.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="formAgregar" class="formulario">
+      <h2>Añadir Cliente VIP</h2>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" required>
+      <label for="ci">CI:</label>
+      <input type="text" id="ci" required>
+      <button class="btn-1" type="submit">Agregar Cliente</button>
+    </form>
+
+    <hr>
+
+    <form id="formEliminar" class="formulario">
+      <h2>Eliminar Cliente VIP</h2>
+      <label for="ciEliminar">CI del cliente:</label>
+      <input type="text" id="ciEliminar" required>
+      <button class="btn-1" type="submit">Eliminar Cliente</button>
+    </form>
+  </main>
+
+  <footer class="container">
+    <p>&copy; 2025 HOTEL UCB - Administrador</p>
+  </footer>
+
+  <script>
+    // Solo simula la gestión en localStorage
+    function actualizarStorage(nombre, ci, eliminar = false) {
+      let clientes = JSON.parse(localStorage.getItem('clientesVIP')) || {};
+      if (eliminar) {
+        delete clientes[ci];
+        alert("Cliente eliminado: " + ci);
+      } else {
+        clientes[ci] = nombre;
+        alert("Cliente agregado: " + nombre);
+      }
+      localStorage.setItem('clientesVIP', JSON.stringify(clientes));
+    }
+
+    document.getElementById("formAgregar").addEventListener("submit", e => {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const ci = document.getElementById("ci").value;
+      actualizarStorage(nombre, ci);
+      e.target.reset();
+    });
+
+    document.getElementById("formEliminar").addEventListener("submit", e => {
+      e.preventDefault();
+      const ci = document.getElementById("ciEliminar").value;
+      actualizarStorage("", ci, true);
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

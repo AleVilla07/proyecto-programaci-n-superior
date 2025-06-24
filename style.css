@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* === RESET & BASE === */
+* {
+  margin: 0;
+  padding: 10px 0 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+html {
+  font-size: 18px; /* base para rem */
+}
+
+body {
+  background-color: #1E1E1E;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* === GENERAL LAYOUT === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+main.container {
+  padding: 60px 20px 80px;
+  margin-top: -100px; /* hace que aparezca más arriba debajo del header */
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+/* === TEXTOS === */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 40px 0 15px;
+}
+
+p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: #000;
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* === HEADER === */
+header {
+  background-image: url(images/wave\ \(1\).svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding: 350px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content {
+  text-align: center;
+  color: #fff;
+}
+
+.header-content .content {
+  max-width: 800px;
+  margin-top: 0;
+}
+
+.header-content img {
+  margin-top: 40px;
+  width: 750px;
+}
+
+/* === NAVBAR === */
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.menu .navbar ul {
+  display: flex;
+  gap: 20px;
+}
+
+.menu .navbar ul li a {
+  font-size: 2rem;
+  color: #fff;
+  padding: 10px;
+}
+
+.menu .navbar ul li a:hover {
+  color: #000;
+}
+
+
+.menu-icono {
+  width: 20px;
+}
+
+#menu {
+  display: none;
+}
+
+.menu label {
+  display: none;
+  cursor: pointer;
+}
+
+/* === BOTONES === */
+.btn-1,
+.btn-2 {
+  display: inline-block;
+  font-size: 1.3rem;
+  padding: 15px 30px;
+  margin: 20px 10px 0 0;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.2s ease;
+  letter-spacing: 1px;
+}
+
+.btn-1 {
+  background-color: rgba(255, 165, 0, 0.2);
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-1:hover {
+  background-color: #ff7f00;
+  color: #000;
+  box-shadow: 0 0 10px #ff7f00;
+}
+
+.btn-2 {
+  background-color: #fff;
+  color: #1E1E1E;
+  border: none;
+}
+
+.btn-2:hover {
+  background-color: #ff7f00;
+  color: #000;
+}
+
+/* === SERVICES === */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  gap: 40px;
+  padding: 60px 20px;
+  
+}
+
+.service {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 300px;
+  flex: 1 1 250px;
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+}
+
+.service img {
+  max-width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.service h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 1.1rem;
+}
+
+/* === PORTAFOLIO === */
+.portfolios {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.portfolios h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.portfolio img {
+  width: 200px;
+  display: block;
+  border-radius: 10px;
+}
+
+/* === FOOTER === */
+footer {
+  padding: 60px 20px;
+  background-image: url(images/wave\ \(2\).svg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+footer .enlaces {
+  margin-top: 30px;
+}
+
+footer a {
+  margin: 10px;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+footer a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .menu .navbar ul {
+    flex-direction: column;
+    background-color: #2C2C2C;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 10px 0;
+  }
+
+  #menu:checked ~ .navbar ul {
+    display: flex;
+  }
+
+  .menu label {
+    display: block;
+  }
+}

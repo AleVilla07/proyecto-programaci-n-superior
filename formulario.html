@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Reserva</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header-content container">
+    <div class="content">
+      <h1>Formulario de Reserva</h1>
+      <p>Completa tus datos para confirmar la reserva.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="reservaForm" class="formulario">
+      <input type="hidden" name="tipo" id="tipo">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="documento">Documento de Identidad:</label>
+      <input type="text" id="documento" name="documento" required>
+
+      <label for="telefono">Número de Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="fecha">Fecha de la reserva:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <button class="btn-1" type="submit">Enviar Reserva</button>
+    </form>
+  </main>
+
+  <footer class="container">
+    <p>&copy; 2025 HOTEL UCB - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("tipo").value = params.get("tipo") || "No especificado";
+
+    document.getElementById("reservaForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+
+      const datos = {
+        tipo: form.tipo.value,
+        nombre: form.nombre.value,
+        documento: form.documento.value,
+        telefono: form.telefono.value,
+        fecha: form.fecha.value
+      };
+
+      const mailto = `mailto:alejandro.villafuerte@ucb.edu.bo?subject=Reserva de ${datos.tipo}&body=Nombre: ${datos.nombre}%0D%0AID: ${datos.documento}%0D%0ATeléfono: ${datos.telefono}%0D%0AFecha: ${datos.fecha}`;
+      window.location.href = mailto;
+
+      // Redirigir a la página de agradecimiento
+      setTimeout(() => {
+        window.location.href = "agradecimiento.html";
+      }, 500);
+    });
+  </script>
+</body>
+</html>

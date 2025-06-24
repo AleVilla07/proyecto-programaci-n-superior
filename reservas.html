@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas - HOTEL UCB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header-content container">
+    <div class="content">
+      <h1>Reservas HOTEL UCB</h1>
+      <p>Selecciona tu tipo de habitación para realizar la reserva.</p>
+    </div>
+  </header>
+
+  <main class="services container">
+    <div class="service">
+      <img src="images/checklist-2.svg" alt="Premium">
+      <h2>Habitaciones Premium</h2>
+      <p>Habitaciones con aire acondicionado, TV por cable, y desayuno incluido.</p>
+      <button class="btn-1" onclick="location.href='formulario.html?tipo=Premium'">Reservar Premium</button>
+    </div>
+
+    <div class="service">
+      <img src="images/toast-93.svg" alt="Suite">
+      <h2>Suites</h2>
+      <p>Suites de lujo con jacuzzi privado, vista panorámica y servicios VIP.</p>
+      <button class="btn-1" onclick="location.href='formulario.html?tipo=Suite'">Reservar Suite</button>
+    </div>
+
+    <div class="service">
+      <img src="images/credit-card-95.svg" alt="Super VIP">
+      <h2>Habitaciones Super VIP</h2>
+      <p>Habitaciones exclusivas con acceso privado, room service 24/7 y mini bar gratuito.</p>
+      <button class="btn-1" onclick="location.href='formulario.html?tipo=Super%20VIP'">Reservar Super VIP</button>
+    </div>
+  </main>
+
+  <footer class="container">
+    <p>&copy; 2025 HOTEL UCB - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function reservar(tipo) {
+      alert('Has elegido reservar una habitación ' + tipo + '. Te contactaremos pronto.');
+    }
+  </script>
+</body>
+</html>
